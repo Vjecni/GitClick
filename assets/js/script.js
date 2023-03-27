@@ -1,8 +1,13 @@
 let hambueger = document.querySelector('.hamburger')
 let slideMenu = document.querySelector('.slideMenu')
 let slideMenu__hamburger  = document.querySelector('.slideMenu__hamburger')
-
 let menu_close = document.querySelectorAll('.menu_close')
+let navbar = document.querySelector('nav')
+
+document.addEventListener('scroll', () => {
+    navbar.classList.toggle('active', window.scrollY > 0)
+})
+
 for(let i = 0; i < menu_close.length; i++) {
     menu_close[i].addEventListener('click', () => {
         slideMenu.classList.toggle('active')
