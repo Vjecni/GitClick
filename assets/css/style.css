@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    color: #FCFBFC;
+    perspective: 1000px;
+    background: #0F0F0F;
+}
+::selection {
+    background: #fcfbfc4f;
+}
+a {
+    color: #FCFBFC;
+    font-weight: 300;
+    text-decoration: none;
+}
+p {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 300;
+}
+li {
+    list-style: none;
+}
+button, .btn {
+    padding: 8px 15px;
+    font-size: 18px;
+    letter-spacing: .5px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s ease;
+    font-weight: 300;
+    background: #FCFBFC;
+    color: #000;
+}
+.scale__anim {
+    display: block;
+    position: relative;
+}
+.scale__anim::before {
+    position: absolute;
+    content: '';
+    transition: .3s ease;
+    width: 100%;
+    bottom: -5px;
+    height: 3px;
+    background: #FCFBFC;
+    transform: scaleX(0);
+}
+.scale__anim:hover::before {
+    transform: scaleX(1);
+}
+header {
+    margin-bottom: 50px;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 400;
+}
+.navbar a {
+    font-size: 18px;
+}
+
+.nav__middle {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+.hamburger {
+    cursor: pointer;
+    position: relative;
+    
+    display: none;
+    background: #fcfbfc18;
+    border-radius: 2px;
+    padding: 10px;
+}
+.hamburger.active span:nth-child(1) {
+    margin-bottom: 0;
+    opacity: 0;
+}
+.hamburger span:nth-child(2) {
+    margin-bottom: 0;
+}
+.hamburger span {
+    transition: .3s ease;
+    position: relative;
+    width: 25px;
+    display: block;
+    height: 2px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.slideMenu {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: .5s ease;
+    background: #000;
+    z-index: 1000;
+    transform: translateX(-100%);
+}
+.slideMenu__content .try__out__btn {
+    border-radius: 2px;
+}
+.slideMenu.active {
+    transform: translate(0);
+}
+.slideMenu__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.slideMenu__content a {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 45px;
+}
+.slideMenu__hamburger {
+    top: 20px;
+    left: 90%;
+    cursor: pointer;
+    position: relative;
+    
+    display: block;
+    width: 45px;
+    background: #fcfbfc18;
+    border-radius: 2px;
+    padding: 10px;
+}
+.slideMenu__hamburger.unactive span:nth-child(1) {
+    margin-bottom: 0;
+    opacity: 0;
+}
+.slideMenu__hamburger span:nth-child(2) {
+    margin-bottom: 0;
+}
+.slideMenu__hamburger span {
+    transition: .3s ease;
+    position: relative;
+    width: 25px;
+    display: block;
+    height: 2px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.try__out__btn {
+    text-transform: capitalize;
+    padding: 5px 15px;
+    font-weight: 300;
+    transition: .3s ease;
+    border: solid 0.1px #FCFBFC;
+    border-radius: 30px;
+}
+.try__out__btn:hover {
+    background: #FCFBFC;
+    color: #000;
+}
+.header__container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.header__left {
+    max-width: 500px;
+    width: 100%;
+}
+.header__title {
+    margin-bottom: 50px;
+}
+.header__title h1 {
+    text-transform: capitalize;
+    font-size: 55px;
+}
+.header__title h1 span {
+    color: #55B5DE;
+}
+.header__quote {
+    margin-bottom: 50px;
+}
+.header__quote p {
+    font-size: 21px;
+    opacity: 80%;
+}
+.header__buttons {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+.header__buttons a {
+    transition: .3s ease;
+    padding: 5px 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: solid .1px #FCFBFC;
+    font-weight: 500;
+    letter-spacing: .5px;
+    border-radius: 30px;
+}
+.btn__download {
+    background: #FCFBFC;
+    color: #000;
+    font-weight: 500;
+}
+.btn__linker:hover {
+    background: #55B5DE;
+    border: #55B5DE;
+    color: #000;
+}
+
+.header__right {
+    max-width: 450px;
+    width: 100%;
+}
+.header__img {
+    position: relative;
+    text-align: center;
+}
+.hr__bubble {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 180px #2da3f7, 0 0 0px #1c3c81;
+    background: transparent;
+    z-index: -1;
+    bottom: 15px;
+    left: 0;
+}
+.header__img img {
+    max-width: 450px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.other__container {
+    padding: 1em;
+    height: 100%;
+}
+.other__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.other__box {
+    border: solid 1px #fcfbfc4f;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.137);
+    max-width: 300px;
+    width: 100%;
+}
+.other__box__icon {
+    width:60px;
+    backdrop-filter: blur(2px);
+    height: 60px;
+    padding: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+}
+.other__box__icon i {
+    font-size: 30px;
+}
+.other__box__title h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+.other__box__description {
+    margin-top: 20px;
+}
+.other__box__description p {
+    opacity: 60%;
+    font-size: 16px;
+}
+
+.about__container {
+    padding: 3em;
+}
+.about__title {
+    margin: auto;
+    max-width: 780px;
+    display: block;
+}
+.about__title h1 {
+    color: #55B5DE;
+    font-size: 3.5rem;
+}
+.about__image {
+    text-align: center;
+    width: 100%;
+}
+.about__image img {
+    max-width: 2250px;
+    width: 100%;
+}
+.pricing__container {
+    padding: 40px;
+}
+.pricing__title {
+    padding: 0 6%;
+    margin-bottom: 20px;
+}
+.pricing__title h1 {
+    font-size: 55px;
+}
+.pricing__txt {
+    padding: 0 6%;
+    margin-bottom: 20px;
+    max-width: 550px;
+    width: 100%;
+}
+.pricing__txt p {
+    opacity: 50%;
+    font-size: 18px;
+}
+.pricing__content {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4em;
+}
+.pricing__box {
+    cursor: default;
+    transition: .3s ease;
+    border: solid 1px #fcfbfc4f;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 300px;
+    width: 100%;
+}
+.pricing__plan__title {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #fcfbfc4f;
+}
+.pricing__plan__title h1 {
+    font-size: 45px;
+}
+.pricing__plan__title p {
+    font-size: 18px;
+    opacity: 80%;
+}
+
+.pricing__plan__options {
+
+}
+.pricing__plan__options ul li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.pricing__plan__buy {
+    margin-top: 20px;
+    text-align: center;
+}
+.pricing__plan__buy .buy__btn {
+    transition: .3s ease;
+    padding: 5px 50px;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #000;
+    width: 100%;
+    border: solid .1px #FCFBFC;
+    background: #FCFBFC;
+    font-weight: 300;
+    letter-spacing: .5px;
+    border-radius: 30px;
+}
+
+.pricing__box:hover {
+    background: #55B5DE;
+    color: #000;
+}
+.pricing__box:hover .pricing__plan__title {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #0000004f;
+}
+.pricing__box:hover .buy__btn {
+    background: #000;
+    color: #fff;
+    border: #000;
+}
+
+@media screen and (max-width: 999px) {
+    .header__content {
+        gap: 0em;
+    }
+    .header__left {
+        max-width: 450px;
+        width: 100%;
+    }
+    .header__right {
+        max-width: 350px;
+        width: 100%;
+    }
+    .header__title {
+        margin-bottom: 10px;
+    }
+    .header__title h1 {
+        font-size: 40px;
+    }
+    .header__quote {
+        margin-bottom: 10px;
+    }
+    .header__img img {
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .about__title h1 {
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 832px) {
+    .header__content {
+        gap: 0em;
+    }
+    .header__left {
+        max-width: 350px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .header__right {
+        max-width: 250px;
+        width: 100%;
+    }
+    .header__title {
+        margin-bottom: 10px;
+    }
+    .header__title h1 {
+        font-size: 40px;
+    }
+    .header__quote {
+        margin-bottom: 10px;
+    }
+    .header__img img {
+        max-width: 250px;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width:745px) {
+    .other__content {
+        gap: 1em;
+    }
+    .other__box {
+        max-width: 200px;
+        width: 100%;
+    }
+    .pricing__container {
+        padding: 00px;
+    }
+    .pricing__box {
+        max-width: 250px;
+        width: 100%;
+    }
+    .pricing__content {
+        gap: 1em;
+    }
+    .pricing__box .pricing__plan__title h1 {
+        font-size: 25px;
+    }
+    .pricing__box .pricing__plan__options ul li {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .other__box {
+        max-width: 550px;
+        width: 100%;
+    }
+    .pricing__container {
+        padding: 1em;
+    }
+    .pricing__box {
+        max-width: 550px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 657px) {
+    .nav__middle, .nav__right {
+        display: none;
+    }
+    .navbar .hamburger {
+        display: block;
+    }
+}
+@media screen and (max-width: 557px) {
+    .about__container {
+        padding: 1em;
+    }
+    .about__title h1 {
+        font-size: 35px;
+    }
+    .about__image img {
+        max-width: 350px;
+        width: 100%;
+    }
+}
