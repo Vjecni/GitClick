@@ -16,6 +16,7 @@ html {
 }
 body {
     color: #FCFBFC;
+    position: relative;
     background: #0F0F0F;
 }
 ::selection {
@@ -71,7 +72,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: none;
+    background: #00000034;
     padding: 10px 40px;
     position: absolute;
     transition: .3s ease;
@@ -470,6 +471,9 @@ header {
     .about__title h1 {
         font-size: 45px;
     }
+    .pricing__container {
+        margin-bottom: 50px;
+    }
 }
 @media screen and (max-width: 832px) {
     .header__content {
@@ -564,4 +568,21 @@ header {
     .header__container {
         margin-top: 50px;
     }
+}
+footer {
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 0;
+    background: #131313;
+    width: 100%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+footer p {
+    font-size: 16px;
+    font-weight: 300;
+}
+footer span {
+    color: #2da3f7;
 }
